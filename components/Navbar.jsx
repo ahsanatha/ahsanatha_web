@@ -1,5 +1,5 @@
 import { Box, color, HStack, Text } from "@chakra-ui/react";
-import Link from "next/Link";
+import Link from "next/link";
 
 const Navbar = () => {
   const menus = [
