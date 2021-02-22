@@ -16,7 +16,7 @@ import {
   Button,
   VStack,
 } from "@chakra-ui/react";
-import Link from "../pages/resources/Link";
+import Link from "./Link";
 import { useRouter } from "next/router";
 import { FaBars, FaMoon, FaSun } from "react-icons/fa";
 import React, { useRef } from "react";
@@ -118,7 +118,7 @@ const Navbar = () => {
               <VStack>
                 {menus.map((menu, idx) => {
                   return (
-                    <Link href={menu.link}>
+                    <Link href={menu.link} key={idx}>
                       <Text fontSize="xs" fontWeight="medium" as="button">
                         {menu.text}
                       </Text>

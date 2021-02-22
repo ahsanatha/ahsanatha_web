@@ -4,7 +4,6 @@ import {
   HStack,
   Text,
   Box,
-  Badge,
   Image,
   Button,
   ButtonGroup,

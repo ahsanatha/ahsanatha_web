@@ -1,6 +1,5 @@
 import * as React from "react"
 import { Box, ChakraProvider, Stack } from "@chakra-ui/react"
-import Main from "../components/Main"
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 

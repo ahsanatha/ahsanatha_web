@@ -11,7 +11,7 @@ import {
   useColorModeValue
 } from "@chakra-ui/react";
 import { FaLinkedin, FaMedium, FaGithub, FaInstagram } from "react-icons/fa";
-import Link from "./resources/Link";
+import Link from "../components/Link";
 
 const Card = () => {
   const socials = [
