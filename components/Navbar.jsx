@@ -1,4 +1,4 @@
-import { Box, color, HStack, Text } from "@chakra-ui/react";
+import { Box, HStack, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -34,9 +34,9 @@ const Navbar = () => {
           </Text>
         </Link>
         <HStack>
-          {menus.map((menu) => {
+          {menus.map((menu,idx) => {
             return (
-              <Link href={menu.link}>
+              <Link href={menu.link} key={idx}>
                 <Text
                   fontSize="xs"
                   fontWeight="medium"

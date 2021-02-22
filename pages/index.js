@@ -49,9 +49,9 @@ const Card = () => {
         >
           <Center>
             <HStack flex={1} spacing={3} align="center" justify="center">
-              {socials.map((social) => {
+              {socials.map((social,idx) => {
                 return (
-                  <Link href={social.link} mx='1'>
+                  <Link href={social.link} mx='1' key={idx}>
                     <Icon as={social.icon} w="6" h="6" />
                   </Link>
                 );
