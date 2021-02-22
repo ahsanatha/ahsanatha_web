@@ -8,6 +8,7 @@ import {
   Image,
   Button,
   ButtonGroup,
+  Stack,
 } from "@chakra-ui/react";
 import { FaDiceSix, FaExternalLinkAlt } from "react-icons/fa";
 const Card = () => {
@@ -20,7 +21,14 @@ const Card = () => {
   };
 
   return (
-    <Box maxH="400px" maxW="900px" borderWidth="1px" borderRadius="lg" d="flex">
+    <Box
+      maxH="400px"
+      maxW="90vh"
+      borderWidth="1px"
+      borderRadius="lg"
+      d="flex"
+      overflow="hidden"
+    >
       <Image
         src={property.imageUrl}
         alt={property.imageAlt}
@@ -57,17 +65,27 @@ const Card = () => {
 
 export default function Resume() {
   return (
-    <VStack spacing={5}>
-      <Box d="flex" alignItems="center">
-        <Icon as={FaDiceSix} mx="1" />
-        <Text fontSize="xl" fontWeight="bold" color="grey.900">
-          Projects
-        </Text>
-      </Box>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-    </VStack>
+    <Stack w="full" alignItems="center" bg="white" overflow='hidden' pt={10}>
+      <VStack spacing={5}>
+        <Box d="flex" alignItems="center">
+          <Icon as={FaDiceSix} mx="1" />
+          <Text fontSize="xl" fontWeight="bold" color="grey.900">
+            Projects
+          </Text>
+        </Box>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </VStack>
+    </Stack>
   );
 }

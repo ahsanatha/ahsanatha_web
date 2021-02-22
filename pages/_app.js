@@ -1,5 +1,5 @@
 import * as React from "react"
-import { ChakraProvider } from "@chakra-ui/react"
+import { Box, ChakraProvider, Stack } from "@chakra-ui/react"
 import Main from "../components/Main"
 import Head from "next/head";
 import Navbar from "../components/Navbar";
@@ -11,10 +11,12 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/img/favicon.ico" />
         <title>Ahsan Athallah</title>
       </Head>
-      <Main>
+      <Stack minH="100vh" w='full' spacing={0}>
        <Navbar />
-       <Component {...pageProps} />
-      </Main>
+       <Box flexGrow={1}>
+        <Component {...pageProps} />
+       </Box>
+      </Stack>
     </ChakraProvider>
   )
 }
