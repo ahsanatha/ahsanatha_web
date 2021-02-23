@@ -30,6 +30,7 @@ const Navbar = () => {
   const router = useRouter();
   const { toggleColorMode } = useColorMode();
   const Icons = useColorModeValue(<FaSun />, <FaMoon />);
+  const bgColor = useColorModeValue("white", "gray.800");
   const btnRef = useRef();
   return (
     <>
@@ -39,6 +40,7 @@ const Navbar = () => {
         px={8}
         boxShadow="lg"
         position="fixed"
+        bg={bgColor}
       >
         <HStack justifyContent="space-between" h="full" alignItems="center">
           <Link href="/" py={{ base: 4, md: 0 }}>

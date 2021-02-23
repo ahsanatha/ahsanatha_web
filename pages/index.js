@@ -119,7 +119,7 @@ export default function Home() {
         justify="center"
         align="center"
         h="100vh"
-        pt="80px"
+        pt="130px"
       >
         <Card />
         <Message />
