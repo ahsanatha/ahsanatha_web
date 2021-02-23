@@ -8,7 +8,7 @@ import {
   Text,
   Icon,
   Button,
-  useColorModeValue
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { FaLinkedin, FaMedium, FaGithub, FaInstagram } from "react-icons/fa";
 import Link from "../components/Link";
@@ -21,9 +21,9 @@ const Card = () => {
     { icon: FaInstagram, link: "https://linkedin.com/in/ahsanatha" },
   ];
   const bgSocialColor = useColorModeValue("white", "#1A202C");
-  const bgMainCardColor = useColorModeValue("blue.100", "blue.600")
+  const bgMainCardColor = useColorModeValue("blue.100", "blue.600");
   return (
-    <Box boxShadow="xl">
+    <Box boxShadow="lg">
       <VStack w="250px" bg={bgMainCardColor}>
         <VStack h="90%" px={10} py={5} spacing={5}>
           <Box>
@@ -113,16 +113,16 @@ const Message = () => {
 
 export default function Home() {
   return (
-    <Stack
-      spacing={0}
-      direction={{ base: "column", md: "row" }}
-      w="full"
-      h="100vh"
-      justify="center"
-      align="center"
-    >
-      <Card />
-      <Message />
-    </Stack>
+      <Stack
+        spacing={0}
+        direction={{ base: "column", md: "row" }}
+        justify="center"
+        align="center"
+        h="100vh"
+        pt="80px"
+      >
+        <Card />
+        <Message />
+      </Stack>
   );
 }

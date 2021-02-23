@@ -5,7 +5,6 @@ import {
   DrawerHeader,
   DrawerBody,
   DrawerCloseButton,
-  DrawerFooter,
   Box,
   HStack,
   IconButton,
@@ -13,7 +12,6 @@ import {
   useColorMode,
   useColorModeValue,
   useDisclosure,
-  Button,
   VStack,
 } from "@chakra-ui/react";
 import Link from "./Link";
@@ -37,12 +35,10 @@ const Navbar = () => {
     <>
       <Box
         w="full"
-        minh="8vh"
-        position={{ md: "inherit", base: "fixed" }}
-        top={0}
-        zIndex={1}
+        minH="50px"
         px={8}
         boxShadow="lg"
+        position="fixed"
       >
         <HStack justifyContent="space-between" h="full" alignItems="center">
           <Link href="/" py={{ base: 4, md: 0 }}>
@@ -89,15 +85,13 @@ const Navbar = () => {
               onClick={toggleColorMode}
               variant="transparent"
               size="sm"
-              onclick={onOpen}
               icon={Icons}
             ></IconButton>
             <IconButton
-              as={Button}
-              d={{ base: "flex", sm: "none" }}
+              d={{ base: "flex", md: "none" }}
               variant="transparent"
               size="sm"
-              onclick={onOpen}
+              onClick={onOpen}
               ref={btnRef}
               icon={<FaBars />}
             />
@@ -110,7 +104,7 @@ const Navbar = () => {
         onClose={onClose}
         finalFocusRef={btnRef}
       >
-        <DrawerOverlay zIndex={999}>
+        <DrawerOverlay>
           <DrawerContent>
             <DrawerCloseButton />
             <DrawerHeader>Menus</DrawerHeader>
