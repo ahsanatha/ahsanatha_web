@@ -118,8 +118,7 @@ export default function Home() {
         direction={{ base: "column", md: "row" }}
         justify="center"
         align="center"
-        h="100vh"
-        pt="130px"
+        h={{base:"100vh",md:"75vh"}}
       >
         <Card />
         <Message />

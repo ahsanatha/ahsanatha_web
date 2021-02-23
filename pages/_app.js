@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Stack minH="100vh" w='full' spacing={0}>
        <Navbar />
-       <Box flexGrow={1}>
+       <Box flexGrow={1} pt="80px">
         <Component {...pageProps} />
        </Box>
       </Stack>

@@ -64,7 +64,7 @@ const Card = () => {
 
 export default function Resume() {
   return (
-    <Stack w="full" alignItems="center" bg="white" overflow='hidden' pt={10}>
+    <Stack w="full" alignItems="center" bg="white" overflow='hidden'>
       <VStack spacing={5}>
         <Box d="flex" alignItems="center">
           <Icon as={FaDiceSix} mx="1" />
