@@ -29,7 +29,7 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();
   const { toggleColorMode } = useColorMode();
-  const Icons = useColorModeValue(<FaSun />, <FaMoon />);
+  const Icons = useColorModeValue(<FaMoon />, <FaSun />);
   const bgColor = useColorModeValue("white", "gray.800");
   return (
     <Box
