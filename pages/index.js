@@ -10,15 +10,15 @@ import {
   Button,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
 import { FaLinkedin, FaMedium, FaGithub, FaInstagram } from "react-icons/fa";
 import Link from "../components/Link";
 
 const Card = () => {
   const socials = [
     { icon: FaLinkedin, link: "https://linkedin.com/in/ahsanatha" },
-    { icon: FaMedium, link: "https://ahsanatha.medium.com/" },
     { icon: FaGithub, link: "https://github.com/ahsanatha" },
-    { icon: FaInstagram, link: "https://linkedin.com/in/ahsanatha" },
+    { icon: FaMedium, link: "https://ahsanatha.medium.com/" },
   ];
   const bgSocialColor = useColorModeValue("white", "#1A202C");
   const bgMainCardColor = useColorModeValue("blue.100", "blue.600");
@@ -30,12 +30,15 @@ const Card = () => {
             <Image
               borderRadius="full"
               boxSize="150px"
-              src="/avatar.jpg"
-              alt="Segun Adebayo"
+              src="/avatar-face.jpg"
+              alt="Muhammad Ahsan Athallah"
               fallbackSrc="https://via.placeholder.com/150"
+              _hover={{
+                src: "/avatar.jpg",
+              }}
             />
           </Box>
-          <Text fontSize="" fontWeight="bold">
+          <Text fontSize="lg" fontWeight="medium" letterSpacing="wide">
             Ahsan Athallah
           </Text>
         </VStack>
@@ -51,7 +54,7 @@ const Card = () => {
             <HStack flex={1} spacing={3} align="center" justify="center">
               {socials.map((social, idx) => {
                 return (
-                  <Link href={social.link} mx="1" key={idx}>
+                  <Link href={social.link} mx="1" key={idx} isExternal={1}>
                     <Icon as={social.icon} w="6" h="6" />
                   </Link>
                 );
@@ -65,6 +68,13 @@ const Card = () => {
 };
 
 const Message = () => {
+  const sapaTranslate = ["Hai", "Hi", "Hola", "Bonjour", "Nǐn hǎo", "안녕"];
+  const [idxSapa, setSapa] = useState(0);
+  useEffect(() => {
+    setTimeout(() => {
+      setSapa((idxSapa + 1) % sapaTranslate.length);
+    }, 2000);
+  }, [idxSapa]);
   return (
     <VStack
       spacing={3}
@@ -79,10 +89,10 @@ const Message = () => {
         bgGradient="linear(to-l,blue.800,#1ABCD9)"
         bgClip="text"
       >
-        Hai.
+        {sapaTranslate[idxSapa]}.
       </Text>
-      <Text fontSize="lg">Here's who I am & what i do</Text>
       <HStack>
+        <Link href='/'>
         <Box
           as="button"
           px={4}
@@ -98,14 +108,16 @@ const Message = () => {
         >
           RESUME
         </Box>
+        </Link>
+        <Link href='/projects'>
         <Button colorScheme="blue" variant="outline" size="sm">
           PROJECTS
         </Button>
+        </Link>
       </HStack>
       <Text fontWeight="light">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        accumsan sodales turpis eleifend feugiat. Aliquam egestas aliquet magna
-        at mollis. Sed sit amet auctor felis, rhoncus consequat mauris.
+        A computer science fresh graduate who loves analyzing, tinkering, and
+        solving problems. Machine Learning and Software Engineering Enthusiast.
       </Text>
     </VStack>
   );
@@ -113,15 +125,15 @@ const Message = () => {
 
 export default function Home() {
   return (
-      <Stack
-        spacing={0}
-        direction={{ base: "column", md: "row" }}
-        justify="center"
-        align="center"
-        h={{base:"100vh",md:"75vh"}}
-      >
-        <Card />
-        <Message />
-      </Stack>
+    <Stack
+      spacing={0}
+      direction={{ base: "column", md: "row" }}
+      justify="center"
+      align="center"
+      h={{ base: "100vh", md: "75vh" }}
+    >
+      <Card />
+      <Message />
+    </Stack>
   );
 }

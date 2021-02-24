@@ -9,16 +9,11 @@ import {
   Button,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import { FaDiceSix, FaExternalLinkAlt,FaPython } from "react-icons/fa";
-const Card = () => {
-  const property = {
-    imageUrl: "https://bit.ly/2Z4KKcF",
-    imageAlt: "Rear view of modern home with pool",
-    title: "Youtube Comment Analyzer",
-    desc:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse accumsan sodales turpis eleifend feugiat. Aliquam egestas aliquet magna at mollis. Sed sit amet auctor felis, rhoncus consequat mauris. Vivamus eleifend ligula ut libero volutpat, a placerat felis malesuada. Proin nec hendrerit purus. Maecenas vel lectus dolor. Aenean tristique feugiat tincidunt.",
-  };
+import Link from "../components/Link";
+import { FaDiceSix, FaExternalLinkAlt, FaPython } from "react-icons/fa";
+import proj from "../data/project";
 
+const Card = (props) => {
   const color = useColorModeValue("gray.200", "gray.700");
   return (
     <Box
@@ -30,31 +25,30 @@ const Card = () => {
     >
       <Stack spacing={0} direction={{ base: "column", md: "row" }}>
         <Image
-          src={property.imageUrl}
-          alt={property.imageAlt}
+          src={props.imageUrl}
+          alt={props.imageAlt}
           height={200}
-          width={250}
+          width={300}
           layout="intrinsic"
         />
-        <VStack p={3} maxW={{ base: "90vw", md: "30vw" }} alignItems="start">
+        <VStack p={5} maxW={{ base: "90vw", md: "30vw" }} alignItems="start">
           <Text fontSize="lg" fontWeight="bold">
-            Judul Project
+            {props.title}
           </Text>
-          <Text noOfLines={{ base: "3", md: "4" }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            accumsan sodales turpis eleifend feugiat. Aliquam egestas aliquet
-            magna at mollis. Sed sit amet auctor felis, rhoncus consequat
-            mauris.
-          </Text>
+          <Text noOfLines={{ base: "3", md: "4" }}>{props.desc}</Text>
           <HStack w="full" justifyContent="space-between">
             <HStack alignItems="center" spacing={2}>
               <HStack>
-                <Icon as={FaPython} w={6} h={6} alt="Python"></Icon>
-                <Icon as={FaPython} w={6} h={6} alt="Python"></Icon>
-                <Icon as={FaPython} w={6} h={6} alt="Python"></Icon>
+                {props.tech.map((item, idx) => {
+                  return <Icon as={item.icon} w={6} h={6} key={idx} />;
+                })}
               </HStack>
             </HStack>
-            <Button size="md">Details</Button>
+            <Link href={props.link}>
+              <Button size="sm" colorScheme="telegram">
+                Details
+              </Button>
+            </Link>
           </HStack>
         </VStack>
       </Stack>
@@ -72,9 +66,9 @@ export default function Resume() {
             Projects
           </Text>
         </HStack>
-        <Card />
-        <Card />
-        <Card />
+        {proj.map((item, idx) => {
+          return <Card {...item} key={idx}/>;
+        })}
       </VStack>
     </Stack>
   );

@@ -21,17 +21,16 @@ import React, { useRef } from "react";
 
 const Navbar = () => {
   const menus = [
-    { text: "ABOUT ME", link: "/" },
-    { text: "PROJECTS", link: "/projects" },
-    { text: "BLOG", link: "/blog" },
-    { text: "CONTACT", link: "/" },
+    { text: "ABOUT ME", link: "/", ext:false},
+    { text: "PROJECTS", link: "/projects" , ext:false},
+    { text: "BLOG", link: "https://ahsanatha.medium.com" , ext:true},
+    { text: "CONTACT", link: "/", ext:false },
   ];
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();
   const { toggleColorMode } = useColorMode();
   const Icons = useColorModeValue(<FaSun />, <FaMoon />);
   const bgColor = useColorModeValue("white", "gray.800");
-  const btnRef = useRef();
   return (
     <Box
       w="full"
@@ -107,7 +106,7 @@ const Navbar = () => {
               <VStack>
                 {menus.map((menu, idx) => {
                   return (
-                    <Link href={menu.link} key={idx} onClick={onClose}>
+                    <Link href={menu.link} key={idx} onClick={onClose} isExternal={menu.ext}>
                       <Text fontSize="xs" fontWeight="medium" as="button">
                         {menu.text}
                       </Text>
