@@ -9,6 +9,8 @@ import {
   Icon,
   Button,
   useColorModeValue,
+  Tooltip,
+  Heading,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { FaLinkedin, FaMedium, FaGithub, FaInstagram } from "react-icons/fa";
@@ -23,7 +25,7 @@ const Card = () => {
   const bgSocialColor = useColorModeValue("white", "#1A202C");
   const bgMainCardColor = useColorModeValue("blue.100", "blue.600");
   return (
-    <Box boxShadow="lg">
+    <Box boxShadow="lg" borderRadius="lg" overflow="hidden">
       <VStack w="250px" bg={bgMainCardColor}>
         <VStack h="90%" px={10} py={5} spacing={5}>
           <Box>
@@ -38,7 +40,11 @@ const Card = () => {
               }}
             />
           </Box>
-          <Text fontSize="lg" fontWeight="medium" letterSpacing="wide">
+          <Text
+            fontSize="xl"
+            fontWeight="bold"
+            letterSpacing="wide"
+          >
             Ahsan Athallah
           </Text>
         </VStack>
@@ -92,33 +98,41 @@ const Message = () => {
         {sapaTranslate[idxSapa]}.
       </Text>
       <HStack>
-        <Link href='/'>
-        <Box
-          as="button"
-          px={4}
-          py={1.5}
-          color="white"
-          fontWeight="semibold"
-          fontSize="sm"
-          borderRadius="md"
-          bgGradient="linear(to-l,blue.500,#1ABCD9)"
-          _hover={{
-            bgGradient: "linear(to-r,blue.500,#1ABCD9)",
-          }}
-        >
-          RESUME
-        </Box>
+        <Link href="/">
+          <Box
+            as="button"
+            px={4}
+            py={1.5}
+            color="white"
+            fontWeight="semibold"
+            fontSize="sm"
+            borderRadius="md"
+            bgGradient="linear(to-l,blue.500,#1ABCD9)"
+            _hover={{
+              bgGradient: "linear(to-r,blue.500,#1ABCD9)",
+            }}
+          >
+            RESUME
+          </Box>
         </Link>
-        <Link href='/projects'>
-        <Button colorScheme="blue" variant="outline" size="sm">
-          PROJECTS
-        </Button>
+        <Link href="/projects">
+          <Button colorScheme="blue" variant="outline" size="sm">
+            PROJECTS
+          </Button>
         </Link>
       </HStack>
-      <Text fontWeight="light">
-        A computer science fresh graduate who loves analyzing, tinkering, and
-        solving problems. Machine Learning and Software Engineering Enthusiast.
-      </Text>
+      <Box fontWeight="light">
+        <Text size="lg">
+          A computer science
+          <Tooltip label="Telkom University" placement="top" hasArrow>
+            <Box as="span" mx={1}>
+              fresh graduate
+            </Box>
+          </Tooltip>
+          who loves analyzing, tinkering, and solving problems. Machine Learning
+          and Software Engineering Enthusiast.
+        </Text>
+      </Box>
     </VStack>
   );
 };
