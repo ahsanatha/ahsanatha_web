@@ -36,10 +36,11 @@ const Navbar = () => {
     <Box
       w="full"
       minH="50px"
-      px={8}
+      px={{base:"5", md:"8"}}
       boxShadow="lg"
-      position={{base:"fixed", md:"absolute"}}
+      position="fixed"
       bg={bgColor}
+      zIndex={999}
     >
       <HStack justifyContent="space-between" h="full" alignItems="center">
         <Link href="/" py={{ base: 4, md: 0 }}>
@@ -94,7 +95,6 @@ const Navbar = () => {
             size="sm"
             onClick={onOpen}
             icon={<FaBars />}
-          />
           />
         </HStack>
       </HStack>

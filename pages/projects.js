@@ -4,12 +4,12 @@ import {
   HStack,
   Text,
   Box,
-  Image,
-  Button,
-  ButtonGroup,
   Stack,
+  useColorModeValue,
+  Button,
 } from "@chakra-ui/react";
-import { FaDiceSix, FaExternalLinkAlt } from "react-icons/fa";
+import Image from "next/image";
+import { FaDiceSix, FaExternalLinkAlt,FaPython } from "react-icons/fa";
 const Card = () => {
   const property = {
     imageUrl: "https://bit.ly/2Z4KKcF",
@@ -19,68 +19,59 @@ const Card = () => {
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse accumsan sodales turpis eleifend feugiat. Aliquam egestas aliquet magna at mollis. Sed sit amet auctor felis, rhoncus consequat mauris. Vivamus eleifend ligula ut libero volutpat, a placerat felis malesuada. Proin nec hendrerit purus. Maecenas vel lectus dolor. Aenean tristique feugiat tincidunt.",
   };
 
+  const color = useColorModeValue("gray.200", "gray.700");
   return (
     <Box
-      maxH="400px"
-      maxW="90vh"
-      borderWidth="1px"
-      borderRadius="lg"
-      d="flex"
+      boxShadow="lg"
       overflow="hidden"
+      borderRadius="lg"
+      borderColor={color}
+      borderWidth="1px"
     >
-      <Image
-        src={property.imageUrl}
-        alt={property.imageAlt}
-        h="100%"
-        maxW="30%"
-        fallbackSrc="https://via.placeholder.com/300"
-      />
-      <VStack p="6" spacing={2} align="start">
-        <Box d="flex" alignItems="baseline">
-          <Text fontSize="xl" fontWeight="bold">
-            {property.title}
+      <Stack spacing={0} direction={{ base: "column", md: "row" }}>
+        <Image
+          src={property.imageUrl}
+          alt={property.imageAlt}
+          height={200}
+          width={250}
+          layout="intrinsic"
+        />
+        <VStack p={3} maxW={{ base: "90vw", md: "30vw" }} alignItems="start">
+          <Text fontSize="lg" fontWeight="bold">
+            Judul Project
           </Text>
-        </Box>
-        <Box
-          my="1"
-          fontWeight="normal"
-          as="h4"
-          lineHeight="tight"
-          noOfLines={[1, 2, 3]}
-        >
-          {property.desc}
-        </Box>
-        <HStack justifyContent="space-between">
-          <Text>Techonologies: Python, Javascript, Flask</Text>
-          <ButtonGroup>
-            <Button rightIcon={<FaExternalLinkAlt />}>Code</Button>
-            <Button rightIcon={<FaExternalLinkAlt />}>View</Button>
-          </ButtonGroup>
-        </HStack>
-      </VStack>
+          <Text noOfLines={{ base: "3", md: "4" }}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            accumsan sodales turpis eleifend feugiat. Aliquam egestas aliquet
+            magna at mollis. Sed sit amet auctor felis, rhoncus consequat
+            mauris.
+          </Text>
+          <HStack w="full" justifyContent="space-between">
+            <HStack alignItems="center" spacing={2}>
+              <HStack>
+                <Icon as={FaPython} w={6} h={6} alt="Python"></Icon>
+                <Icon as={FaPython} w={6} h={6} alt="Python"></Icon>
+                <Icon as={FaPython} w={6} h={6} alt="Python"></Icon>
+              </HStack>
+            </HStack>
+            <Button size="md">Details</Button>
+          </HStack>
+        </VStack>
+      </Stack>
     </Box>
   );
 };
 
 export default function Resume() {
   return (
-    <Stack w="full" alignItems="center" bg="white" overflow='hidden'>
+    <Stack w="full" alignItems="center" overflow="hidden">
       <VStack spacing={5}>
-        <Box d="flex" alignItems="center">
+        <HStack alignItems="center">
           <Icon as={FaDiceSix} mx="1" />
           <Text fontSize="xl" fontWeight="bold" color="grey.900">
             Projects
           </Text>
-        </Box>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        </HStack>
         <Card />
         <Card />
         <Card />
