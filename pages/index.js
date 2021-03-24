@@ -40,11 +40,7 @@ const Card = () => {
               }}
             />
           </Box>
-          <Text
-            fontSize="xl"
-            fontWeight="bold"
-            letterSpacing="wide"
-          >
+          <Text fontSize="xl" fontWeight="bold" letterSpacing="wide">
             Ahsan Athallah
           </Text>
         </VStack>
@@ -130,7 +126,8 @@ const Message = () => {
             </Box>
           </Tooltip>
           who loves analyzing, tinkering, and solving problems. Machine Learning
-          and Software Engineering Enthusiast. Check out my socials to see what am i been up to ;)
+          and Software Engineering Enthusiast. Check out my socials to see what
+          I have been up to ;)
         </Text>
       </Box>
     </VStack>
