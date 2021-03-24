@@ -98,7 +98,7 @@ const Message = () => {
         {sapaTranslate[idxSapa]}.
       </Text>
       <HStack>
-        <Link href="/">
+        <Link href="https://drive.google.com/file/d/1im2Bgyg-CEqP0iDhAS7ooYgUzFdrWgws/view?usp=sharing">
           <Box
             as="button"
             px={4}
@@ -130,7 +130,7 @@ const Message = () => {
             </Box>
           </Tooltip>
           who loves analyzing, tinkering, and solving problems. Machine Learning
-          and Software Engineering Enthusiast.
+          and Software Engineering Enthusiast. Check out my socials to see what am i been up to ;)
         </Text>
       </Box>
     </VStack>
