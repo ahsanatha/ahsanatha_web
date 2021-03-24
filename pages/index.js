@@ -40,9 +40,24 @@ const Card = () => {
               }}
             />
           </Box>
-          <Text fontSize="xl" fontWeight="bold" letterSpacing="wide">
-            Ahsan Athallah
-          </Text>
+          <Box>
+            <Text
+              fontSize="xl"
+              fontWeight="bold"
+              letterSpacing="wide"
+              textAlign="center"
+            >
+              Ahsan Athallah
+            </Text>
+            <Text
+              fontSize="sm"
+              fontWeight="light"
+              letterSpacing="wide"
+              textAlign="center"
+            >
+              Software Engineer at Tokopedia
+            </Text>
+          </Box>
         </VStack>
         <Stack
           w="100%"
