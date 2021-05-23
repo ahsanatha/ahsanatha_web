@@ -137,10 +137,9 @@ const Message = () => {
           A computer science
           <Tooltip label="Telkom University" placement="top" hasArrow>
             <Box as="span" mx={1}>
-              <Text as="ins">fresh graduate</Text>
+              <Text as="ins">fresh graduate.</Text>
             </Box>
           </Tooltip>
-          who loves analyzing, and solving problems.
         </Text>
       </Box>
     </VStack>
