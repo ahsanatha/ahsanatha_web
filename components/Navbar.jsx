@@ -21,21 +21,21 @@ import React, { useRef } from "react";
 
 const Navbar = () => {
   const menus = [
-    { text: "ABOUT ME", link: "/", ext:false},
-    { text: "PROJECTS", link: "/projects" , ext:false},
-    { text: "BLOG", link: "https://ahsanatha.medium.com" , ext:true},
-    { text: "CONTACT", link: "/", ext:false },
+    { text: "ABOUT ME", link: "/", ext: false },
+    { text: "PROJECTS", link: "/projects", ext: false },
+    { text: "BLOG", link: "https://ahsanatha.medium.com", ext: true },
+    { text: "CONTACT", link: "/", ext: false },
   ];
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();
   const { toggleColorMode } = useColorMode();
-  const Icons = useColorModeValue(<FaMoon />, <FaSun />);
+  const Icons = useColorModeValue(<FaSun />, <FaMoon />);
   const bgColor = useColorModeValue("white", "gray.800");
   return (
     <Box
       w="full"
       minH="50px"
-      px={{base:"5", md:"8"}}
+      px={{ base: "5", md: "8" }}
       boxShadow="lg"
       position="fixed"
       bg={bgColor}
@@ -106,7 +106,12 @@ const Navbar = () => {
               <VStack>
                 {menus.map((menu, idx) => {
                   return (
-                    <Link href={menu.link} key={idx} onClick={onClose} isExternal={menu.ext}>
+                    <Link
+                      href={menu.link}
+                      key={idx}
+                      onClick={onClose}
+                      isExternal={menu.ext}
+                    >
                       <Text fontSize="xs" fontWeight="medium" as="button">
                         {menu.text}
                       </Text>

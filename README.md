@@ -1,2 +1,3 @@
 ## Loh kok kosong?
-### iya bikinnya nyicil nyicil sabar ya
+
+iya bikinnya nyicil nyicil sabar ya
